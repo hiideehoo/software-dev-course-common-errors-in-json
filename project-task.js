@@ -69,6 +69,29 @@ const invalidBookingJSON = `
 }
 `;
 
+const validBookingJSON =
+{
+  "hotelName": "Grand City Hotel",
+  "checkInDate": "2024-05-15", // added a comma
+  "checkOutDate": "2024-05-20",
+  "guests": [
+    {
+      "name": "Alice Johnson", // added quotation marks around the key
+      "age": 30,
+      "email": "alice.johnson@example.com"
+    },
+    {
+      "name": "Bob Smith",
+      "age": 32, // added a value to avoid undefined
+      "email": "bob.smith@example.com" // added the .com
+    }
+  ],
+  "roomDetails": {
+    "type": "Suite", 
+    "pricePerNight": 200,
+    "amenities": ["WiFi", "Breakfast", "Parking"] // removed comma from the end of array
+  }
+}
 
 // ============================================
 // ✅ Requirements
@@ -92,10 +115,32 @@ const invalidBookingJSON = `
 
 1️⃣ What tools or techniques did you use to identify the errors?
 
+I pasted the object into a .json file to see more clearly where the program was having issues.
+
 2️⃣ How did you confirm that your corrected JSON file was valid?
+
+I pasted the revised object into jsonlint.com
 
 3️⃣ Which errors were the most difficult to spot? Why?
 
+The missing .com almost sneaked past me since it didn't show as an error in the .json file or on jsonlint.com
+
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
    (e.g., syntax highlighting, linters, writing JSON by example)
+
+I think what would help me best is if I were to write the syntax in my own way first so it's easier for me to read, then properly format it after.
+
+Example: 
+
+{
+  "hotelName": "Grand City Hotel",
+  "checkInDate": "2024-05-15",
+  "checkOutDate": "2024-05-20",
+  "guests": [
+    { "name": "Alice Johnson", "age": 30, "email": "alice.johnson@example.com" },
+    { "name": "Bob Smith", "age": 32, "email": "bob.smith@example" }
+  ],
+  "roomDetails": { "type": "Suite", "pricePerNight": 200, "amenities": [ "WiFi", "Breakfast", "Parking" ] }
+}
+
 */
